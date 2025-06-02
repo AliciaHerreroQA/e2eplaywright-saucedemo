@@ -42,7 +42,7 @@ jobs:
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: playwright-videos-traces
+        name: playwright-videos-traces-desktop
         path: test-results/
 
 
@@ -61,6 +61,6 @@ jobs:
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: playwright-videos-traces
+        name: playwright-videos-traces-mobile
         path: test-results/
 
