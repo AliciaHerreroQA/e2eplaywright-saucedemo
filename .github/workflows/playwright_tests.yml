@@ -45,3 +45,22 @@ jobs:
         name: playwright-videos-traces
         path: test-results/
 
+
+    - name: Run tests on mobile
+      run: |
+          pytest --capture=tee-sys --html=resultsmobile.html --self-contained-html --device="iPhone 12" --video=on
+
+    - name: Upload Playwright report (Mobile)
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: playwright-report-mobile
+        path: resultsmobile.html
+
+    - name: Upload Test Results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: playwright-videos-traces
+        path: test-results/
+
